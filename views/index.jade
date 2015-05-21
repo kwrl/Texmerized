@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .container
+      .row
+          .col-md-12.well
+              form.form-horizontal
+                input(type="url", placeholder="URL", name="fetchurl" id="urlfield").form-control
+      .row
+          .col-md-12
+              div#textcontainer
+
+  script(src="/javascripts/fetcher.js")
