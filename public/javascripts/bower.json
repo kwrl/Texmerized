@@ -1,7 +1,7 @@
 {
-    "name": "your-app",
-    "dependencies": {
-            "ember": "~1.6",
-            "ember-data": "~1.0.0-beta.8"
-        }
+  "name": "piss",
+  "dependencies": {
+      "ember": "1.6.1",
+      "handlebars":"1.0.0"
+    }
 }
