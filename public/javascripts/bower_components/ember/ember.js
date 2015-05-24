@@ -11255,7 +11255,7 @@ define("container/container",
     "use strict";
     var InheritingDict = __dependency1__["default"];
 
-    // A lightweight container that helps to assemble and decouple components.
+    // A lightweight container that helps to assemble and decouple directive.
     // Public api for the container is still in flux.
     // The public api, specified on the application namespace should be considered the stable api.
     function Container(parent) {
@@ -24117,7 +24117,7 @@ define("ember-views/views/component",
 
       The easiest way to create an `Ember.Component` is via
       a template. If you name a template
-      `components/my-foo`, you will be able to use
+      `directive/my-foo`, you will be able to use
       `{{my-foo}}` in other templates, which will make
       an instance of the isolated component.
 
@@ -24147,7 +24147,7 @@ define("ember-views/views/component",
       ```handlebars
       <!-- app-profile template -->
       <h1>{{person.title}}</h1>
-      {{! Executed in the components context. }}
+      {{! Executed in the directive context. }}
       {{yield}} {{! block contents }}
       ```
 
@@ -24186,7 +24186,7 @@ define("ember-views/views/component",
       Components must have a `-` in their name to avoid
       conflicts with built-in controls that wrap HTML
       elements. This is consistent with the same
-      requirement in web components.
+      requirement in web directive.
 
       @class Component
       @namespace Ember
@@ -24211,7 +24211,7 @@ define("ember-views/views/component",
       },
 
       /**
-      A components template property is set by passing a block
+      A directive template property is set by passing a block
       during its invocation. It is executed within the parent context.
 
       Example:
@@ -24241,7 +24241,7 @@ define("ember-views/views/component",
       }).property('templateName'),
 
       /**
-      Specifying a components `templateName` is deprecated without also
+      Specifying a directive `templateName` is deprecated without also
       providing the `layout` or `layoutName` properties.
 
       @deprecated
@@ -28730,7 +28730,7 @@ define("ember-handlebars/component_lookup",
         container = container || this.container;
 
         var fullName = 'component:' + name,
-            templateFullName = 'template:components/' + name,
+            templateFullName = 'template:directive/' + name,
             templateRegistered = container && container.has(templateFullName);
 
         if (templateRegistered) {
@@ -28850,7 +28850,7 @@ define("ember-handlebars/controls",
       itself extends `Ember.Component`, meaning that it does NOT inherit
       the `controller` of the parent view.
 
-      See more about [Ember components](api/classes/Ember.Component.html)
+      See more about [Ember directive](api/classes/Ember.Component.html)
 
 
       ## Use as checkbox
@@ -29089,7 +29089,7 @@ define("ember-handlebars/controls",
       itself extends `Ember.Component`, meaning that it does NOT inherit
       the `controller` of the parent view.
 
-      See more about [Ember components](api/classes/Ember.Component.html)
+      See more about [Ember directive](api/classes/Ember.Component.html)
 
       @method textarea
       @for Ember.Handlebars.helpers
@@ -33341,7 +33341,7 @@ define("ember-handlebars/helpers/yield",
       ```
 
       ### Use with Ember.Component
-      When designing components `{{yield}}` is used to denote where, inside the component's
+      When designing directive `{{yield}}` is used to denote where, inside the component's
       template, an optional block passed to the component should render:
 
       ```handlebars
@@ -33352,7 +33352,7 @@ define("ember-handlebars/helpers/yield",
       ```
 
       ```handlebars
-      <!-- components/labeled-textfield.hbs -->
+      <!-- directive/labeled-textfield.hbs -->
       <label>
         {{yield}} {{input value=value}}
       </label>
@@ -42639,7 +42639,7 @@ define("ember-application/system/application",
       ```
 
       Initializers provide an opportunity to access the container, which
-      organizes the different components of an Ember application. Additionally
+      organizes the different directive of an Ember application. Additionally
       they provide a chance to access the instantiated application. Beyond
       being used for libraries, initializers are also a great way to organize
       dependency injection or setup in your own application.
@@ -42960,7 +42960,7 @@ define("ember-application/system/application",
 
         When Ember instantiates a controller, view, or other framework component
         it can attach a dependency to that component. This is often used to
-        provide services to a set of framework components.
+        provide services to a set of framework directive.
 
         An example of providing a session object to all controllers:
 
@@ -45845,7 +45845,7 @@ define("container/container",
     "use strict";
     var InheritingDict = __dependency1__["default"];
 
-    // A lightweight container that helps to assemble and decouple components.
+    // A lightweight container that helps to assemble and decouple directive.
     // Public api for the container is still in flux.
     // The public api, specified on the application namespace should be considered the stable api.
     function Container(parent) {

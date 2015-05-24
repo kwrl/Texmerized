@@ -42,16 +42,17 @@ function upper_level_domain(url) {
     return domain;
 }
 
-function process_query_result(data, url, cb) {
+function process_query_result($, url, cb) {
     var processed_result = {
         links: [],
         text_units: []
     };
-    var domain = upper_level_domain(url);
-    data("p").each(function(i, elem){
-        processed_result.text_units.push(data(this).text());
-    });
-
+    if($) {
+        var domain = upper_level_domain(url);
+        $("p").each(function (i, elem) {
+            processed_result.text_units.push({title: $(this).text(), paragraphs:[]});
+        });
+    }
     cb(processed_result);
 }
 

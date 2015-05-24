@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel='stylesheet' , href='/stylesheets/bootstrap.min.css'>
+    <link rel='stylesheet' , href='/stylesheets/style.css'>
+    <link rel='stylesheet' , href='http://bootswatch.com/superhero/bootstrap.css'>
+    <script src="http://code.jquery.com/jquery-2.0.0.js"></script>
+    <script src="javascripts/bower_components/handlebars/handlebars.js"></script>
+    <script src="http://builds.emberjs.com.s3.amazonaws.com/beta/daily/20130909/ember.js"></script>
+    <script src="http://builds.emberjs.com.s3.amazonaws.com/beta/daily/20130904/ember-data.js"></script>
+</head>
+<body>
+<script type="text/x-handlebars" data-template-name="fetcher">
+    {{input type="text" value=fetchUrl class="form-control"}}
+    <div class="container">
+        <div id="textcontainer" class="well col-md-10 col-md-offset-1">
+            {{#each textunit in model}}
+            <h2>{{textunit.title}}</h2>
+            {{/each}}
+        </div>
+    </div>
+    <p>{{fetchUrl}}</p>
+</script>
+
+<script src="/javascripts/emberapp.js"></script>
+<script src="/javascripts/router.js"></script>
+<script src="/javascripts/models.js"></script>
+<script src="/javascripts/controller.js"></script>
+</body>
+</html>

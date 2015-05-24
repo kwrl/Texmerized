@@ -11,3 +11,4 @@ Fetcher.FetcherRoute = Ember.Route.extend({
         return this.store.find('textunit');
     }
 });
+

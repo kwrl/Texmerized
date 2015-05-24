@@ -7,13 +7,5 @@ Fetcher.Textunit = DS.Model.extend({
 });
 
 Fetcher.Textunit.FIXTURES = [
-    {
-        id: 1,
-        title: "Cool story"
-    },
-    {
-        id: 2,
-        title: "Bad story"
-    }
 ];
 

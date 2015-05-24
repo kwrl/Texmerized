@@ -3,13 +3,12 @@ extends layout
 block content
   .container
       .row
-          .col-md-12.well
-              form.form-horizontal
-                input(type="url", placeholder="URL", name="fetchurl" id="urlfield").form-control
-      .row
-          .col-md-12
-              div#textcontainer
-              script(type="text/handlebars" data-template-name="fetcher")
-                  section#fetcherapp
-
-  script(src="/javascripts/fetcher.js")
+      .row#textcontainer
+            | <script type="text/x-handlebars" data-template-name="fetcher">
+            | {{input type="text" on="change" id="fetchurl" class="form-control col-md-10 col-md-offset-1"placeholder="URL" action="updateTextUnits" class="form-control"}}
+            | <div class="well col-md-10 col-md-offset-1">
+            | {{#each textunit in model}}
+            |   <h2>{{textunit.title}}</h2>
+            | {{/each}}
+            | </div>
+            | </script>

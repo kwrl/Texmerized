@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="texmerizedApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel='stylesheet' , href='/stylesheets/bootstrap.min.css'>
+    <link rel='stylesheet' , href='/stylesheets/style.css'>
+    <link rel='stylesheet' , href='http://bootswatch.com/superhero/bootstrap.css'>
+    <script src="http://code.jquery.com/jquery-2.0.0.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="javascripts/angularjs/controllers.js"></script>
+</head>
+<body ng-controller="TextUnitController">
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <input class="form-control" name="queryField" type="url" ng-model="query" ng-change="queryChanged()">
+        </div>
+    </div>
+</nav>
+<ul>
+    <textunit class="col-md-6 col-md-offset-3" ng-repeat="textunit in textunits">
+    </textunit>
+</ul>
+</body>
+</html>

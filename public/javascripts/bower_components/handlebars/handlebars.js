@@ -958,7 +958,7 @@ Compiler.prototype = {
     this.depths = {list: []};
     this.options = options;
 
-    // These changes will propagate to the other compiler components
+    // These changes will propagate to the other compiler directive
     var knownHelpers = this.options.knownHelpers;
     this.options.knownHelpers = {
       'helperMissing': true,
