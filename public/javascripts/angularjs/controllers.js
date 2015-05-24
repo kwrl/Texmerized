@@ -9,6 +9,7 @@ texmerizedApp.controller('TextUnitController', function ($scope) {
     $scope.stopwords = [];
 
     $scope.queryChanged = function () {
+        $scope.textunits = [];
         document.title = $scope.query;
         $.post("/query", {
             "queryID": $scope.queryID++,
