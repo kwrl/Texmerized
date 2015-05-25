@@ -4,17 +4,16 @@
 
 var texmerizedApp = angular.module('texmerizedApp', ['texmerizedFilters']);
 
-texmerizedApp.controller('TextUnitController', function ($scope) {
+texmerizedApp.controller('TextUnitController', function ($scope, $http) {
     $scope.textunits = [];
-    $scope.stopwords = [];
+    $scope.query = '';
 
-    $scope.queryChanged = function () {
-        $scope.textunits = [];
-        document.title = $scope.query;
-        $.post("/query", {
-            "queryID": $scope.queryID++,
-            "fetchurl": $scope.query
-        }).success(function (data) {
+    $scope.$watch('query', function (newQuery, oldQuery) {
+        document.title = newQuery;
+        $http.post("/query", {
+            "fetchurl": newQuery
+        }).success(function (data, status, headers, config) {
+                $scope.textunits = [];
                 data.text_units.forEach(function (elem) {
                     $scope.textunits.push({
                         title: elem.title,
@@ -23,18 +22,18 @@ texmerizedApp.controller('TextUnitController', function ($scope) {
                 });
             }
         );
-    };
+    });
 
 }).directive('textunit', function () {
-        return {
-            templateUrl: function (elem, attr) {
-                return 'directives/textunit.html';
-            }
-        };
+    return {
+        templateUrl: function (elem, attr) {
+            return 'directives/textunit.html';
+        }
+    };
 }).directive('obscure', function () {
-        return {
-            templateUrl: function(elem, attr) {
-               return 'directives/obscure-textunit.html';
-            }
-        };
+    return {
+        templateUrl: function (elem, attr) {
+            return 'directives/obscure-textunit.html';
+        }
+    };
 });
