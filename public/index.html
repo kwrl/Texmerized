@@ -7,14 +7,13 @@
     <link rel='stylesheet' , href='/stylesheets/style.css'>
     <link rel='stylesheet' , href='http://bootswatch.com/readable/bootstrap.css'>
     <script src="http://code.jquery.com/jquery-2.0.0.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="javascripts/angularjs/controllers.js"></script>
-    <script src="javascripts/angularjs/filters.js"></script>
+    <script src="javascripts/bundle.js"></script>
 </head>
 <body ng-controller="TextUnitController">
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <input class="form-control" name="queryField" type="url" ng-model="query">
+        <input class="form-control col-md-9" name="queryField" type="url" ng-model="query">
+        <input class="form-control col-md-3" name="filterDegreeField" type="number" ng-model="filterDegree">
     </div>
     </div>
 </nav>

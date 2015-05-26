@@ -9,13 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var queries = require('./routes/queries.js');
 
-var ncp = require('ncp').ncp;
 
-ncp('node_modules/bootstrap/dist/css/bootstrap.min.css', 'public/stylesheets/bootstrap.min.css', function(err) {
-    if(err) {
-        return console.error(err);
-    }
-})
 
 var app = express();
 

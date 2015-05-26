@@ -1,7 +1,0 @@
-{
-  "name": "piss",
-  "dependencies": {
-      "ember": "1.6.1",
-      "handlebars":"1.0.0"
-    }
-}
