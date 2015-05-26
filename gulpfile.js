@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     browserify = require('gulp-browserify'),
     concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
     clean = require('gulp-clean');
 
 gulp.task('copy', [], function () {
@@ -22,6 +23,7 @@ gulp.task('browserify', function() {
             debug: true
         }))
         .pipe(concat('bundle.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('./public/javascripts'));
 });
 
